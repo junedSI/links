@@ -41,7 +41,8 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2;
+      pointer-events: none;
     }
 
     .hero h1,
@@ -144,6 +145,7 @@
       z-index: 0;
       opacity: 0.8;
       transition: opacity 0.4s ease;
+      pointer-events: none;
     }
 
     .card:hover video {
@@ -256,26 +258,81 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+      .hero {
+        padding: 1rem;
+        min-height: 100vh;
+      }
+      
       .hero h1 {
         font-size: 2rem;
       }
       
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .container {
+        padding: 1rem;
+        gap: 1.5rem;
+      }
+      
       .card {
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        max-width: 350px;
+        height: 220px;
+        margin: 0 auto;
+      }
+      
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
       }
       
       .hero-btn {
         padding: 12px 24px;
         font-size: 1rem;
       }
+      
+      .card-content img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.8rem;
+      }
+      
+      .card-content h2 {
+        font-size: 1.4rem;
+      }
+      
+      .card-content p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .container {
+        padding: 0.5rem;
+      }
+      
+      .card {
+        width: calc(100% - 1rem);
+        height: 200px;
+      }
+      
+      .hero-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
   <section class="hero">
-    <video autoplay muted loop>
-      <source src="video/3194277-hd_1920_1080_30fps.mp4" type="video/webm">
+    <video autoplay muted loop playsinline webkit-playsinline>
+      <source src="video/3194277-hd_1920_1080_30fps.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <h1>@Juned's Universe</h1>
@@ -285,8 +342,8 @@
 
   <section class="container" id="cards-section">
     <div class="card" onclick="redirectToLink('https://youtube.com/@learnwithsense?si=im-Bp5dastVH71v8')">
-      <video autoplay muted loop>
-        <source src="video/4988847-hd_1280_720_30fps.mp4" type="video/webm">
+      <video autoplay muted loop playsinline webkit-playsinline>
+        <source src="video/4988847-hd_1280_720_30fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="card-content">
@@ -297,8 +354,8 @@
     </div>
     
     <div class="card" onclick="redirectToLink('https://juned.itzaktechnologies.com/index.html')">
-      <video autoplay muted loop>
-        <source src="video/5319746-uhd_3840_2160_25fps.mp4" type="video/webm">
+      <video autoplay muted loop playsinline webkit-playsinline>
+        <source src="video/5319746-uhd_3840_2160_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="card-content">
@@ -309,8 +366,8 @@
     </div>
     
     <div class="card" onclick="redirectToLink('https://yourstartup.com')">
-      <video autoplay muted loop>
-        <source src="video/2792370-hd_1920_1080_30fps.mp4" type="video/webm">
+      <video autoplay muted loop playsinline webkit-playsinline>
+        <source src="video/2792370-hd_1920_1080_30fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="card-content">
@@ -321,8 +378,8 @@
     </div>
     
     <div class="card" onclick="redirectToLink('https://instagram.com/startuphandle')">
-      <video autoplay muted loop>
-        <source src="video/6550419-uhd_3840_2160_25fps.mp4" type="video/webm">
+      <video autoplay muted loop playsinline webkit-playsinline>
+        <source src="video/6550419-uhd_3840_2160_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="card-content">
@@ -333,8 +390,8 @@
     </div>
     
     <div class="card" onclick="redirectToLink('https://linkedin.com/in/yourprofile')">
-      <video autoplay muted loop>
-        <source src="video/7414127-hd_1920_1080_24fps.mp4" type="video/webm">
+      <video autoplay muted loop playsinline webkit-playsinline>
+        <source src="video/7414127-hd_1920_1080_24fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="card-content">
@@ -345,10 +402,10 @@
     </div>
     
     <div class="card" onclick="redirectToLink('https://linkedin.com/in/yourprofile')">
-       <video autoplay muted loop>
-         <source src="video/6962343-hd_1920_1080_25fps.mp4" type="video/webm">
+       <video autoplay muted loop playsinline webkit-playsinline>
+         <source src="video/6962343-hd_1920_1080_25fps.mp4" type="video/mp4">
          Your browser does not support the video tag.
-       </video>
+       </source>
        <div class="card-content">
            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111505.png" alt="Medium Logo" width="40" height="40">
          <h2>Medium</h2>
